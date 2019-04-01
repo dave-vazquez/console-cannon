@@ -7,8 +7,8 @@ body {
   justify-content: flex-start;
   align-items: stretch;
   width: 100%;
-  height: 98vh;
   max-width: 1000px;
+  height: 98vh;
   margin: 0 auto;
 }
 .container .left-panel {
@@ -17,21 +17,24 @@ body {
   justify-content: center;
   align-items: center;
   align-self: flex-start;
-  width: 50%;
-  max-width: 800px;
-  margin: 0 auto;
+  width: 40%;
+  margin: 0 20px;
 }
 .container .left-panel .directions-container {
+  width: 100%;
   line-height: 25px;
-  max-width: 500px;
-  padding: 10px 0;
+  padding-bottom: 10px;
   border-bottom: 1px dashed black;
+}
+.container .left-panel .directions-container p:last-of-type {
+  font-size: 12px;
 }
 .container .left-panel .slider-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  width: 100%;
 }
 .container .left-panel .slider-container div {
   display: flex;
@@ -41,7 +44,7 @@ body {
 }
 .container .left-panel .slider-container .slider {
   -webkit-appearance: none;
-  width: 400px;
+  width: 100%;
   height: 2px;
   background: #d3d3d3;
   outline: none;
@@ -50,10 +53,45 @@ body {
   transition: opacity 0.2s;
 }
 .container .left-panel .button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 400px;
   margin-top: 20px;
 }
+.container .left-panel .button-container button {
+  width: 100px;
+  height: 25px;
+  border: 1px solid black;
+}
+.container .left-panel .button-container button:hover {
+  cursor: pointer;
+}
+.container .left-panel .button-container #fire-cannon-button {
+  color: white;
+  background-color: #03ca03;
+}
+.container .left-panel .button-container #stop-launch-button {
+  color: white;
+  background-color: #ff0000;
+}
+.container .left-panel .button-container #clear-terminal-button {
+  color: white;
+  background-color: #0059ff;
+}
+@media (max-width: 1020px) {
+  .container .left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+  }
+}
 .container .right-panel {
-  width: 50%;
+  width: 60%;
 }
 .container .right-panel #node-terminal {
   width: 500px;
@@ -61,4 +99,26 @@ body {
   color: white;
   background-color: black;
   font-family: 'Courier New', Courier, monospace;
+}
+@media (max-width: 1020px) {
+  .container .right-panel {
+    width: 100%;
+  }
+  .container .right-panel #node-terminal {
+    margin-top: 20px;
+    width: 100%;
+    height: 1000px;
+  }
+}
+@media (max-width: 1020px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 }

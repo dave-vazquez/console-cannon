@@ -5,26 +5,32 @@ body {
 .container {
     .flex();
     width: 100%;
-    height: 98vh;
     max-width: 1000px;
+    height: 98vh;
+    
     margin: 0 auto;
+
 
     .left-panel {
         .flex(column, center, center);
         align-self: flex-start;
-        width: 50%;
-        max-width: 800px;
-        margin: 0 auto;
+        width: 40%;
+        margin: 0 20px;
 
         .directions-container {
+            width: 100%;
             line-height: 25px;
-            max-width: 500px;
-            padding: 10px 0;
+            padding-bottom: 10px;
             border-bottom: 1px dashed black;
+
+            p:last-of-type {
+                font-size: 12px;
+            }
         }
 
         .slider-container {
             .flex(column);
+            width: 100%;
 
             div {
                 .flex(@justify: space-between)
@@ -32,7 +38,7 @@ body {
 
             .slider {
                 -webkit-appearance: none;
-                width: 400px;
+                width: 100%;
                 height: 2px;
                 background: #d3d3d3;
                 outline: none;
@@ -43,12 +49,43 @@ body {
         }
 
         .button-container {
+            .flex(@justify: space-around);
+            width: 400px;
             margin-top: 20px;
+
+            button {
+                width: 100px;
+                height: 25px;
+                border: 1px solid black;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            #fire-cannon-button{
+                color: white;
+                background-color: #03ca03;
+            }
+
+            #stop-launch-button{
+                color: white;
+                background-color: #ff0000;
+            }
+
+            #clear-terminal-button{
+                color: white;
+                background-color: #0059ff;
+            }
+        }
+
+        @media @tablet {
+            .content-tablet('left-panel');
         }
     }
 
     .right-panel {
-        width: 50%;
+        width: 60%;
 
         #node-terminal {
             width: 500px;
@@ -59,6 +96,14 @@ body {
 
             font-family: 'Courier New', Courier, monospace;
         }
+
+        @media @tablet {
+            .content-tablet('right-panel');
+        }
+    }
+
+    @media @tablet {
+        .content-tablet('container');
     }
 }
 
@@ -67,4 +112,48 @@ body {
     flex-direction: @direction;
     justify-content: @justify;
     align-items: @align;
+}
+
+@tablet: ~"(max-width: 1020px)";
+
+.content-tablet(@className) {
+
+    & when (@className = 'container') {
+        .flex(column, center, center);
+        width: 100%;
+        height: auto;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    & when (@className = 'left-panel') {
+        .flex(column, center, center);
+        width: 100%;
+        padding: 0 10px;
+    }
+    & when (@className = 'directions-container') {
+        .flex(column, center, center);
+        width: 100%;
+        padding: 0 10px;
+
+        #dir-1 span {
+            display: none;
+        }
+
+        #dir-1:after {
+            content: 'Down below is a terminal simulation';
+        }
+        
+        //max-width: 1000px;
+        //margin: 0 auto;
+    }
+    & when (@className = 'right-panel') {
+        width: 100%;
+
+        #node-terminal {
+            margin-top: 20px;
+            width: 100%;
+            height: 1000px;
+        }
+    }
 }
