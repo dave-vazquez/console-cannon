@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Console Cannon</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <header>
+                <h1>Console Cannon</h1>
+            </header>
+
+            <div class="directions-container">
+                <p>Directions:</p>
+                <ol>
+                    <li>To the right is terminal simulation ------------------------></li>
+                    <li>It simulates the output of running <a href="https://github.com/dave-vazquez/JavaScript-II/blob/dave-vazquez/assignments/consoleCannon.js"><code>consoleCannon.js</code></a></br>
+                        in the terminal with <code>node</code>.</li>
+                    <li>Adjust the cannon settings below.</li>
+                    <li>Click "Fire Cannon! to run <a href="https://github.com/dave-vazquez/JavaScript-II/blob/dave-vazquez/assignments/consoleCannon.js"><code>consoleCannon.js</code></a></br>
+                        in the terminal!</li>
+                    <li>I don't know why I made this.</li>
+                    <li>But sometimes I get an idea, and I just can't stop myself,</br>
+                        no matter how pointless it is.</li>
+                    <li>I probably wouldn't have made this had I could actually </br>
+                        get the output to display in the console the way I wanted it to...</li>
+                </ol>
+            </div>
+
+            <h2>Cannon Settings</h2>
+
+            <div class="slider-container">
+                <div>
+                    <p>Starting Height:</p>
+                    <p id="height-val">50</p>
+                </div>
+                <input id="height-input" class="slider" type="range" min="1" max="50" value="50">
+            </div>
+
+            <div class="slider-container">
+                <div>
+                    <p>Velocity:</p>
+                    <p id="velocity-val">7</p>
+                </div>
+                <input id="velocity-input"  class="slider" type="range" min="1" max="50" value="7">
+            </div>
+
+            <div class="slider-container">
+                <div>
+                    <p>Gravity:</p>
+                    <p id="gravity-val">.5</p>
+                </div>
+                <input id="gravity-input" class="slider" type="range" min=".1" max="20" step="0.1" value=".5">
+            </div>
+
+            <h2>Display Settings</h2>
+
+            <div class="slider-container">
+                <div>
+                    <p>Animation Speed:</p>
+                    <p id="animation-val">1</p>
+                </div>
+                <input id="animation-input" class="slider" type="range" min="1" max="4" value="1">
+            </div>
+
+            <div class="slider-container">
+                <div>
+                    <p>Interval Speed:</p>
+                    <p id="interval-val">30</p>
+                </div>
+                <input id="interval-input" class="slider" type="range" min="50" max="1000" step = "50" value="50">
+            </div>
+
+            <div class="button-container">
+                <button id="fire-cannon-button">Fire Cannon!</button>
+                <button id="stop-launch-button">Stop Launch</button>
+                <button id="clear-terminal-button">Clear Terminal</button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <textarea id="node-terminal"></textarea>
+        </div>
+    </div>
+    <script src="consoleCannon.js"></script>
+</body>
+</html>
